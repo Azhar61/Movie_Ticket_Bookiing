@@ -16,7 +16,6 @@
      
         <form class="contact-form" action="/contact-us" method="post" enctype="multipart/form-data">
         @csrf
-           <input type="hidden" name="_token" value="baLhWCDx2AxS1HUpOeVb0ZnoGOnYpD738PE2BfxR"> 
            <div class="form-row">
               <div class="col-lg-6 form-group"> <label for="name">Your Name</label> <input type="text" value="{{ old('name') }}" required name="name" class="form-control"> </div>
               <div class="col-lg-6 form-group"> <label for="email">Your Email</label> <input type="email"  name="email" class="form-control" value="{{ old('email') }}" required pattern="[a-zA-Z0-9!#$%&amp;'*+/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(.[a-zA-Z0-9-]+)*"> </div>

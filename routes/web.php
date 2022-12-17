@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\mycontroller;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\FoodController;
+use App\Http\Controllers\ContactUsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +35,7 @@ Route::get('updatedata',[mycontroller::class,'update']);
 
 
 Route::view('comming_soon','comming_soon');
-Route::view('contact','contact');
+//Route::view('contact','contact');
 Route::view('about_us','about_us');
 Route::get('comming_soon',[mycontroller::class, 'show_movies']);
 Route::get('now_showing',[mycontroller::class, 'now_show_movies']);
@@ -51,3 +52,11 @@ Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout')
 Route::view('fastFood','fastFood');
 Route::post('insertPriceData', [FoodController::class, 'insertPrice']);
 Route::get('fastFood', [FoodController::class, 'readdata']);
+//Routes For Contact-us Form
+
+Route::get('contact-us',[ContactUsController::class,'create']);
+Route::post('contact-us', [ContactUsController::class,'store']);
+
+//Route::get('contact-us', 'ContactUsController@create');
+
+

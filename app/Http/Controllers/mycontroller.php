@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\movie_list;
+use Illuminate\Http\Resources\Json\PaginatedResourceResponse;
+
 class mycontroller extends Controller
 {
     function insert(Request $req){
@@ -33,6 +35,9 @@ class mycontroller extends Controller
         $mdata = movie_list::where('mavailable', 'no')->get();
               return view('comming_soon', ['cmdata'=>$mdata]);
        }
+    
+
+
        
        public function now_show_movies()
         {
