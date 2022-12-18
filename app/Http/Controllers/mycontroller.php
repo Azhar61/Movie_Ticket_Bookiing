@@ -27,23 +27,24 @@ class mycontroller extends Controller
         return redirect('/');
     }
 
-    function readdata(){
-        $mdata= movie_list::all();
-        return view('create', ['data'=>$mdata]);
+   public function readdata (Request $request){
+        $mdata= movie_list::paginate(1);
+        return view('create', compact('mdata'));
     }
-    function show_movies(){
+    
+       public function s_movies(Request $request)
+       {
+        $movies = movie_list::where('mavailable', 'yes')->paginate(1);
+        return view('now_showing', compact('movies'));
+   
+       }
+
+       function show_movies(){
         $mdata = movie_list::where('mavailable', 'no')->get();
               return view('comming_soon', ['cmdata'=>$mdata]);
        }
-    
-
-
        
-       public function now_show_movies()
-        {
-               $nowmdata = movie_list::where('mavailable', 'yes')->get();
-              return view('now_showing', ['cmdata'=>$nowmdata]);
-                    }
+       
        public function index(){
         return movie_list::all();
        }

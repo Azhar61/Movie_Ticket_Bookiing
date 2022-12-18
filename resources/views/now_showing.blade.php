@@ -6,7 +6,7 @@
         </div>
     </section>
     <div class="container d-flex p-5 flex-wrap ">
-    @foreach($cmdata as $item)
+    @foreach($movies as $item)
         <div class="card p-2 m-3" style="width: 16rem; ">
             <img class="card-img-top" src="images/{{$item['mimage']}}" alt="Card image cap">
             <div class="card-body">
@@ -17,7 +17,9 @@
             </div>
           </div>
           @endforeach  
-
+          <div class="container p-3">
+    {!! $movies->withQueryString()->links('pagination::bootstrap-4') !!}
+    </div>
     </div>
     
     

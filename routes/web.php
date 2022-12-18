@@ -38,7 +38,8 @@ Route::view('comming_soon','comming_soon');
 //Route::view('contact','contact');
 Route::view('about_us','about_us');
 Route::get('comming_soon',[mycontroller::class, 'show_movies']);
-Route::get('now_showing',[mycontroller::class, 'now_show_movies']);
+Route::get('now_showing',[mycontroller::class, 's_movies']);
+
 //Route::view('test','test');
 Route::get('test',[mycontroller::class, 'MoviesList']);
 // Routes For Login
@@ -53,10 +54,8 @@ Route::view('fastFood','fastFood');
 Route::post('insertPriceData', [FoodController::class, 'insertPrice']);
 Route::get('fastFood', [FoodController::class, 'readdata']);
 //Routes For Contact-us Form
-
 Route::get('contact-us',[ContactUsController::class,'create']);
 Route::post('contact-us', [ContactUsController::class,'store']);
 
-//Route::get('contact-us', 'ContactUsController@create');
 
 

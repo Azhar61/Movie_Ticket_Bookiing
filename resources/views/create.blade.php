@@ -62,7 +62,7 @@
       
     </thead>
     <tbody class="text-dark bg-light fs-4">
-      @foreach($data as $item)
+      @foreach($mdata as $item)
       <tr>
         <form action="updateordelete" method="get">
         <td class="pt-2 " style="font-size: 18px ;"><input type="hidden" name="id" value="{{$item['Id']}}">{{$item['Id']}}</td>
@@ -77,6 +77,8 @@
       @endforeach
     </tbody>
   </table>
+  <div class="container p-3">
+    {!! $mdata->withQueryString()->links('pagination::bootstrap-4') !!}
 </div>
 <center>
 <button type="button" class="btn btn-outline-success fw-bold fs-4 mt-3 btn-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
