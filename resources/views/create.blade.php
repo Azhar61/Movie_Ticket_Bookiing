@@ -49,7 +49,7 @@
 </div>
 </center>
 <div class="container">
-  <table class="mt-5 table " >
+  <table id= "mytable" class="mt-5 table " >
     <thead class="bg-primary text-white fw-bold">
       <th>Id</th>
       <th>Title</th>
@@ -79,5 +79,9 @@
     </tbody>
   </table>
 </div>
-  
+<script>
+  $(document).ready(function() {
+    $('#mytable').DataTable();
+} );
+ </script>
 @endsection
