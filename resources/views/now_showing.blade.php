@@ -8,7 +8,7 @@
     <div class="container d-flex p-5 flex-wrap ">
     @foreach($movies as $item)
     <form action="moviepage" method="get" >
-        <div class="card p-2 m-3" style="width: 16rem; ">
+        <div class="card p-2 m-3" style="width: 17rem; ">
             <img class="card-img-top" src="images/{{$item['mimage']}}" alt="Card image cap">
             <input type="hidden" name="m_image" value="{{$item['mimage']}}">
             <div class="card-body">
