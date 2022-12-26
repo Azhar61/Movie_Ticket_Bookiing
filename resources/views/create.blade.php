@@ -73,6 +73,7 @@
         <td><img src="images/{{$item['mimage']}}" width="100px" height="100px" alt=""></td>
         <td class="pt-2"><input type="submit" class="btn btn-outline-primary rounded-pill" value="Update" name="update"></td> 
        <td class="pt-2"><input type="submit" class="btn btn-outline-danger rounded-pill" value="Delete" name="Delete"></td>
+        </form>
       </tr>
       @endforeach
     </tbody>

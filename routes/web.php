@@ -5,6 +5,7 @@ use App\Http\Controllers\mycontroller;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\MoviePageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,11 +29,11 @@ Route::get('/', function () {
 //Routes For over All Website
 Route::post('insertData', [mycontroller::class, 'insert']);
 Route::get('create', [mycontroller::class, 'readdata']);
-//Route::view('update','update');
+Route::view('movie_page','movie_page');
 Route::get('updateordelete',[mycontroller::class,'updateordelete']);
 Route::get('updatedata',[mycontroller::class,'update']);
 
-
+Route::get('moviepage',[MoviePageController::class,'sendmoviepage']);
 
 Route::view('comming_soon','comming_soon');
 //Route::view('contact','contact');
