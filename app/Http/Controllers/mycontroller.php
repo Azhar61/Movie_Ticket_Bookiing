@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DataTables;
 use Illuminate\Http\Request;
 use App\Models\movie_list;
 use Illuminate\Http\Resources\Json\PaginatedResourceResponse;
@@ -24,13 +24,15 @@ class mycontroller extends Controller
         $mov->mavailable= $avialable;
         $mov->mimage= $images;
         $mov->save();
-        return redirect('/');
+        return redirect('create');
     }
 
-   public function readdata (Request $request){
-        $mdata= movie_list::paginate(1);
-        return view('create', compact('mdata'));
+   public function readdata (){
+        $mdata= movie_list::all();
+        return view('create', ['data'=>$mdata]);
     }
+  
+
     
        public function s_movies(Request $request)
        {
@@ -67,7 +69,7 @@ class mycontroller extends Controller
          $trailer = $req->get('trailer');
          $available = $req->get('available');
          if($req->get('update')=='Update'){
-            return view('update',['mid'=>$id,'mtitle'=>$title,'mdes'=>$desc,'mtrailer'=>$trailer,'mavailable'=>$available]);
+          return view('update',['mid'=>$id,'mtitle'=>$title,'mdes'=>$desc,'mtrailer'=>$trailer,'mavailable'=>$available]);
          }
        else{
         $mov = movie_list::find($id);
@@ -87,7 +89,7 @@ class mycontroller extends Controller
         $mov->mtrailer= $TRAILER;
         $mov->mavailable= $AVAILABLE;
         $mov->save();
-        return redirect('/');
+        return redirect('create');
        }
 
 

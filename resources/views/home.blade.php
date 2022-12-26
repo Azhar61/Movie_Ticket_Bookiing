@@ -3,7 +3,7 @@
 <div id="carouselExampleIndicators" class="carousel slide pointer-event mt-4" data-ride="carousel">
   <div class="carousel-inner" role="listbox">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="{{asset('/home_images/OR8yYDStAckhd.jpg')}}" data-src="" alt="900x400" style="width: 900px; height: fit-content;" data-holder-rendered="true">
+      <img class="d-block w-100" src="{{asset('/home_images/qAHhNCosiF8hd.jpg')}}" data-src="" alt="900x400" style="width: 900px; height: fit-content;" data-holder-rendered="true">
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="{{asset('/home_images/pEWqOAcYgpQhd.jpg')}}" data-src="" alt="900x400" style="width: 900px; height:fit-content;" data-holder-rendered="true">

@@ -28,7 +28,7 @@ Route::get('/', function () {
 //Routes For over All Website
 Route::post('insertData', [mycontroller::class, 'insert']);
 Route::get('create', [mycontroller::class, 'readdata']);
-Route::view('update','update');
+//Route::view('update','update');
 Route::get('updateordelete',[mycontroller::class,'updateordelete']);
 Route::get('updatedata',[mycontroller::class,'update']);
 

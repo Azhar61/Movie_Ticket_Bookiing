@@ -12,10 +12,49 @@
             <div class="card-body">
               <h5 class="card-title">{{$item['mtitle']}}</h5>
              <p class="card-text text-muted">{{$item['mdes']}}</p>
-              <a href="{{$item['mtrailer']}}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" ><i class="fa fa-play-circle m-1" aria-hidden="true"></i>Trailer</a>
-              
+             <button type="button" class="btn btn-primary"  value ="{{$item['mtrailer']}}" id="trailerid" onclick="showModal()"><i class="fa fa-play-circle m-1"></i>Trailer</button>
+             
+            
             </div>
           </div>
-          @endforeach 
+          @endforeach
     </div>
-    @endsection
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close bg-danger" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+        <iframe width="760" height="343" id="trailerv" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="modal-footer">
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+
+<script>
+    function showModal() {
+        var buttonValue = document.getElementById('trailerid').value;
+        console.log(buttonValue);
+        document.getElementById('trailerv').src = buttonValue;
+      $('#myModal').modal('show');
+  }
+</script>
+
+   
+
+
+@endsection
+
