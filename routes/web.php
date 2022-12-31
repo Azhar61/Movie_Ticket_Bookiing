@@ -6,6 +6,8 @@ use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\MoviePageController;
+use App\Http\Controllers\ShowTimeController;
+use App\Http\Controllers\ShowtimeDetailsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +34,7 @@ Route::get('create', [mycontroller::class, 'readdata']);
 Route::view('movie_page','movie_page');
 Route::get('updateordelete',[mycontroller::class,'updateordelete']);
 Route::get('updatedata',[mycontroller::class,'update']);
-
+Route::view('add_showtime', 'add_showtime');
 Route::get('moviepage',[MoviePageController::class,'sendmoviepage']);
 
 Route::view('comming_soon','comming_soon');
@@ -42,7 +44,7 @@ Route::get('comming_soon',[mycontroller::class, 'show_movies']);
 Route::get('now_showing',[mycontroller::class, 's_movies']);
 
 //Route::view('test','test');
-Route::get('test',[mycontroller::class, 'MoviesList']);
+
 // Routes For Login
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']); 
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');
@@ -58,5 +60,10 @@ Route::get('fastFood', [FoodController::class, 'readdata']);
 Route::get('contact-us',[ContactUsController::class,'create']);
 Route::post('contact-us', [ContactUsController::class,'store']);
 
+//ShowTime Routes
+Route::post('insertShowData', [ShowTimeController::class, 'insertShow']);
+Route::get('add_showtime', [ShowTimeController::class, 'readdata']);
+//Route::get('add_showtime',[ShowTimeController::class, 'MoviesList']);
+//Route::get('movie_page',[MoviePageController::class,'showtimedataa']);
 
 

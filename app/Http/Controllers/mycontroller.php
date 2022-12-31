@@ -50,12 +50,7 @@ class mycontroller extends Controller
        public function index(){
         return movie_list::all();
        }
-       public function MoviesList()
-       {
-        $moviesList = movie_list::select('Id', 'mtitle')->get();
-        return view('test',compact('moviesList'));
-        
-       }
+       
       
 
 

@@ -47,7 +47,6 @@
 <script>
     function showModal() {
         var buttonValue = document.getElementById('trailerid').value;
-        console.log(buttonValue);
         document.getElementById('trailerv').src = buttonValue;
       $('#myModal').modal('show');
   }
