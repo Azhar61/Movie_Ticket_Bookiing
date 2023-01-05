@@ -25,7 +25,7 @@
             </select>
             </div>
             <div class="mb-2">
-                <input type="date"  class="form-control" name="" id="">
+                <input type="date"  class="form-control" name="" id="" min="{{date('Y-m-d')}}" max="{{date('2023-1-10')}}" >
             </div>
            
             <div class="mb-2">

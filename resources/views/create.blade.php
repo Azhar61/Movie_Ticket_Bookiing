@@ -1,8 +1,8 @@
-@extends('welcome')
+@extends('auth.dashboard')
 @section('content')
-<div class="container text-center bg-primary" style="margin-bottom: 0.5rem;">
+<!-- <div class="container text-center bg-primary" style="margin-bottom: 0.5rem;">
             <h2 class="text-white p-3">Add Movie in List</h2>
-        </div>
+        </div> -->
 <center>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-outline-primary fw-bold fs-4 mt-5 btn-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">

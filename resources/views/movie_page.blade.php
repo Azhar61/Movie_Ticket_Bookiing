@@ -24,47 +24,69 @@
 							<div id="first" role="tabpanel" aria-labelledby="first-tab" class="tab-pane fade show active">
 								<div class="form-row py-3 openDetailPanelA">
 									<div class="col-md-12">
-										<select name="date" class="form-control">
-											<option value="">{{$item->show_date}}</option>
+										<!-- <select name="date" class="form-control"> -->
+											<div class="container border"><h6>Show Starting Date</h6>
+											<p id="date" class="text-muted">{{$item->show_date}}</p></div>
+											<!-- <input type="date" name="showdatee" id="showdatee" value = "{{$item->show_date}}" class="form-control" min="{{date("Y-m-d")}}"> -->
+											<!-- <option  id="date" value="">{{$item->show_date}}</option> -->
 											<!-- <option value="">20 October, 2022</option> -->
-										</select>
+										<!-- </select> -->
 									</div>
 								</div>
-								
+								<form action="seatPage" method="get">
 								<div class="openDetailPanelA">
-									<h4 class="text-4 font-weight-600 d-block text-dark">Morning Show</h4>
-									<p class="text-muted mt-2 mb-1">{{$item->screen_hall}}</p>
+								<input type="hidden" name="show_date" id="showdate" value="" class="form-control">
+								<input type="hidden" name="m_title" id="" value="{{$mtitle}}" class="form-control">
+								<input type="hidden" name="session" id="" value="Morning Show" class="form-control"><h4 class="text-4 font-weight-600 d-block text-dark">Morning Show</h4>
+									<input type="hidden" name="show_hall" id="" value="{{$item->screen_hall}}" class="form-control"><p class="text-muted mt-2 mb-1">{{$item->screen_hall}}</p>
 									<div class="form-row movie-time">
 										<div class="form-check col-md-3 col-4">
-											<label class="form-check-label border rounded-lg p-2 w-100 text-center mb-2" id="time1.1">
-												<input type="radio" id="time1" name="time1" class="form-check-input animate__animated animate__bounceIn" value="{{$item->morning_show}}"></label>
+											<!-- <label class="form-control border rounded-lg p-2 w-100 text-center mb-2" id="time1.1"></label> -->
+											<input type="hidden" name="time1" id="timee" value="" class="form-control"><input type="submit" id="time1" name="" class="form-control animate__animated animate__bounceIn btn btn-outline-primary" value="{{$item->morning_show}}">
 										</div>
 									</div>
+									</form>
 									<!---->
+									<form action="seatPageAfter" method="get">
+									<input type="hidden" name="show_date2" id="showdate2" value="" class="form-control">
+									<input type="hidden" name="m_title2" id="" value="{{$mtitle}}" class="form-control">
+									<input type="hidden" name="show_hall" id="" value="{{$item->screen_hall}}" class="form-control">
+									<input type="hidden" name="session2" id="" value="Afternoon Show" class="form-control">
 									<h4 class="text-4 font-weight-600 d-block text-dark">Afternoon Show</h4>
 									<p class="text-muted mt-2 mb-1">{{$item->screen_hall}}</p>
 									<div class="form-row movie-time">
 										<div class="form-check col-md-3 col-4">
-											<label class="form-check-label border rounded-lg p-2 w-100 text-center mb-2" id="time2.1">
-												<input type="radio" id="time2"  name="time2" class="form-check-input animate__animated animate__bounceIn" value="{{$item->afternoon_show}}"></label>
+											<!-- <label class="form-control border rounded-lg p-2 w-100 text-center mb-2" id="time2.1"></label> -->
+											<!-- <input type="hidden" name="session" id="" value="Afternoon Show" class="form-control"> -->
+											<input type="hidden" name="time2" id="timeee" value="" class="form-control">
+											<input type="submit" id="time2"  name="time2" class="form-control animate__animated animate__bounceIn btn btn-outline-primary" value="{{$item->afternoon_show}}">
 										</div>
 									</div>
+									</form>
 									<!---->
 									<!---->
 									<!---->
+									<form action="seatPageNight" method="get">
+									<input type="hidden" name="show_date3" id="showdate3" value="" class="form-control">
+									<input type="hidden" name="show_hall" id="" value="{{$item->screen_hall}}" class="form-control">
+									<input type="hidden" name="m_title3" id="" value="{{$mtitle}}" class="form-control">
+									<input type="hidden" name="session3" id="" value="Night Show" class="form-control">
 									<h4 class="text-4 font-weight-600 d-block text-dark">Night Show</h4>
 									<p class="text-muted mt-2 mb-1">{{$item->screen_hall}}</p>
 									<div class="form-row movie-time">
-										<div class="form-check col-md-3 col-4">
-											<label class=" form-check-label border rounded-lg p-2 w-100 text-center mb-2" id="time3.1">
-												<input type="radio" id="time3" name="time3" class="form-check-input animate__animated animate__bounceIn" value="{{$item->night_show}}"></label>
+										<div class=" col-md-3 col-4">
+											<!-- <label class=" form-control-label border rounded-lg p-2 w-100 text-center mb-2" id="time3.1"></label> -->
+											<input type="hidden" name="time3" id="timeeee" value="" class="form-control">
+											<input type="hidden" name="session3" id="" value="Night Show" class="form-control">
+												<input type="submit" id="time3" name="time3" class="form-control animate__animated animate__bounceIn btn btn-outline-primary" value="{{$item->night_show}}">
 										</div>
 									</div>
-									
+									</form>
 									
 								</div>
 								@endforeach
 								<!---->
+								
 							</div>
 							<div id="second" role="tabpanel" aria-labelledby="second-tab" class="tab-pane fade">
 								<div class="row">
@@ -119,15 +141,34 @@ function convertTime(timeString) {
   }
 const timeString1 = document.getElementById("time1").value;
 const convertedTime1 = convertTime(timeString1);
-document.getElementById('time1.1').innerHTML = convertedTime1;
+document.getElementById('time1').value = convertedTime1;
+document.getElementById('timee').value = convertedTime1;
 const timeString2 = document.getElementById("time2").value;
 const convertedTime2 = convertTime(timeString2);
-document.getElementById('time2.1').innerHTML = convertedTime2;
+document.getElementById('timeee').value = convertedTime2;
+document.getElementById('time2').value = convertedTime2;
 const timeString3 = document.getElementById("time3").value;
 const convertedTime3 = convertTime(timeString3);
-document.getElementById('time3.1').innerHTML = convertedTime3;
-console.log(convertedTime1);
-console.log(convertedTime2);
-console.log(convertedTime3);
+document.getElementById('time3').value = convertedTime3;
+document.getElementById('timeeee').value = convertedTime3;
+
+//Change Date Format
+let date = new Date(document.getElementById('date').innerHTML);
+
+// Change the date format to 'Month Day, Year' for the English language
+let options = { year: 'numeric', month: 'long', day: 'numeric' };
+let enDate = date.toLocaleDateString('en-US', options);
+
+// Change the date format to 'Day/Month/Year' for the French language
+options = { year: 'numeric', month: 'numeric', day: 'numeric' };
+let frDate = date.toLocaleDateString('fr-FR', options);
+
+document.getElementById('date').innerHTML=frDate;
+document.getElementById('showdate').value=frDate;
+document.getElementById('showdate2').value=frDate;
+
+document.getElementById('showdate3').value=frDate;
+
+
 </script>
 @endsection

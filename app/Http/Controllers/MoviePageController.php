@@ -24,13 +24,13 @@ class MoviePageController extends Controller
         }
       
     
-    public function  showtimedataa(){
-      $showtimedata = DB::table('showtimes')
-           ->select('morning_show', 'afternoon_show' ,'night_show','screen_hall')
-            ->where('movie_title', 'Babe Bhangra Paunde Ne')
-           ->get();
-           return view('movie_page', compact('showtimedata'));
-    }
+    // public function  showtimedataa(){
+    //   $showtimedata = DB::table('showtimes')
+    //        ->select('morning_show', 'afternoon_show' ,'night_show','screen_hall')
+    //         ->where('movie_title', 'Babe Bhangra Paunde Ne')
+    //        ->get();
+    //        return view('movie_page', compact('showtimedata'));
+    // }
         
     
      

@@ -1,4 +1,4 @@
-@extends('welcome')
+@extends('auth.dashboard')
 @section('content')
 
 

@@ -22,4 +22,8 @@ class FoodController extends Controller
                $data= food::all();
                return view('fastFood', ['fdata'=>$data]);
                   }
+                  function foodprice(){
+                    $data= food::all();
+                    return view('seat_booking', ['fdata'=>$data]);
+                       }
 }

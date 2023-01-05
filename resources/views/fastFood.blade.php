@@ -1,4 +1,4 @@
-@extends('welcome')
+@extends('auth.dashboard')
 @section('content')
 <div class="container text-center bg-primary" style="margin-bottom: 0.5rem;">
             <h2 class="text-white p-3">Add Foods Price's</h2>
@@ -51,10 +51,10 @@
       <tr>
         <form action="UpdateorDelete" method="get">
         <td class="pt-2 " style="font-size: 18px ;"><input type="hidden" name="id" value="{{$item['Id']}}">{{$item['id']}}</td>
-        <td class="pt-2"style="font-size: 16px ; font-weight: bold;"><input type="number" name="cdprice" value="{{$item['drink_price']}}">{{$item['drink_price']}}</td>
-        <td class="pt-2"style="font-size: 16px ; font-weight: bold;"><input type="number" name="pcornprice" value="{{$item['popcorn_price']}}">{{$item['popcorn_price']}}</td>
-        <td class="pt-2"><input type="submit" class="btn btn-outline-primary rounded-pill" value="Update" name="update"></td> 
-       <td class="pt-2"><input type="submit" class="btn btn-outline-danger rounded-pill" value="Delete" name="update">
+        <td class="pt-2"style="font-size: 16px ; font-weight: bold;" ><input type="hidden" name="cdprice" id="colddprice" value="{{$item['drink_price']}}">{{$item['drink_price']}}</td>
+        <td class="pt-2"style="font-size: 16px ; font-weight: bold;"  ><input type="hidden" name="pcornprice" id="popcprice"value="{{$item['popcorn_price']}}">{{$item['popcorn_price']}}</td>
+        <td class="pt-2"><input type="button" class="btn btn-outline-primary rounded-pill" value="Update" name="update"></td> 
+       <td class="pt-2"><input type="button" class="btn btn-outline-danger rounded-pill" value="Delete" name="update">
     </td>
     </form>
       </tr>
@@ -62,8 +62,6 @@
     </tbody>
   </table>
 </div>
-
-
 
 
 

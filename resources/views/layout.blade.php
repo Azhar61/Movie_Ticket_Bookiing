@@ -21,7 +21,9 @@
 <body style="font-family: Poppins ;">
 <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top " style="font-family: Poppins ; line-height: 30px; ">
-        <a class="navbar-brand text-light "   href="/">BookiT</a>
+      <a class="navbar-brand" href="/">
+    <img src="{{asset('/home_images/Bookit copy-1.png')}}" width="60" height="40"  alt="">
+  </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -29,7 +31,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link text-light  font-weight-bold" href="/">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link text-light  font-weight-bold" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle text-light font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -40,15 +42,15 @@
                 <a class="dropdown-item" href="comming_soon">Comming Soon</a>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
+          <!-- <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search Movies" aria-label="Search">
             <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-          </form>
+          </form> -->
         </div>
       </nav> 
     </header>
   
-       @yield('content');
+       @yield('content')
 
 
 <footer class="text-center text-lg-start bg-light "style="font-family: Poppins">
@@ -87,9 +89,9 @@
               <!-- Grid column -->
               <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                 <!-- Content -->
-                <h6 class="fw-bold mb-4 font-weight-bold"style="color:blue">
-                  <i class="fas fa-ticket-alt me-3 m-1"></i>BookiT
-                </h6>
+                <a class="bg-primary" href="/" >
+    <img src="{{asset('/home_images/Untitled.svg')}}" alt="" style="width: 50px; height:60px">
+  </a>
                 <p>
                   Here you can use rows and columns to organize your footer content. Lorem ipsum
                   dolor sit amet, consectetur adipisicing elit.
